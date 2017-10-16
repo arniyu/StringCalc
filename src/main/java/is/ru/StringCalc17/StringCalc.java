@@ -39,6 +39,21 @@ public class StringCalc
         	{
 		    	negNum.add(indexNumber);
         	}
+        	else
+		    	{
+		    		if (indexNumber > 1000)
+		    		{
+		    			continue;
+		    		}
+		    		else
+		    		{
+		    			total += indexNumber;
+		    		}
+		    	}
+		    if(negNum.size() > 0)
+		    {
+				throw new RuntimeException("Negatives not allowed: " + negNum);
+			}
 		}
 		return total;
 	}

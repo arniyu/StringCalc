@@ -61,4 +61,10 @@ public class StringCalcTest
     	//assertNotNull(exception);
     	assertEquals("Negatives not allowed: [-4, -5]", exception.getMessage());
 	}
+
+	@Test
+	public void testIfNumberHigherThen1000IsIgnored()
+	{
+		assertEquals(0 + 2, StringCalc.add("1001,2"));
+	}
 }
