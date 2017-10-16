@@ -19,4 +19,9 @@ public class StringCalc
 		}
 	}
 
+	private static int toInt(String number)
+	{
+		return Integer.parseInt(number);
+	}
+
 }
