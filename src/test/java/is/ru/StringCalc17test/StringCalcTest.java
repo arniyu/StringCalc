@@ -10,4 +10,13 @@ public class StringCalcTest
 	{
 		assertEquals(0, StringCalc.add(""));
 	}
+
+	@Test
+	public void testOneNumber()
+	{
+	assertEquals(1, StringCalc.add("1"));
+	}
+
+	
+
 }
