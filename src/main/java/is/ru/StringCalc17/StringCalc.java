@@ -1,4 +1,6 @@
 package is.ru.StringCalc17;
+import java.util.ArrayList;
+
 
 public class StringCalc
 {
@@ -28,9 +30,15 @@ public class StringCalc
 	private static int sum(String[] numbers)
 	{
     	int total = 0;
+    	ArrayList<Integer> negNum = new ArrayList<Integer>();
     	for(String number : numbers)
     	{
-	    	total += toInt(number);
+	    	//total += toInt(number);
+	    	int indexNumber = toInt(number);
+        	if (indexNumber < 0)
+        	{
+		    	negNum.add(indexNumber);
+        	}
 		}
 		return total;
 	}

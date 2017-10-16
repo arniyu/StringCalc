@@ -29,4 +29,36 @@ public class StringCalcTest
 		assertEquals(6, StringCalc.add("1,2,3"));
 	}
 
+	@Test
+    public void testUnknownAmountofNumbers()
+    {
+    	assertEquals((3+15+31+44), StringCalc.add("3,15,31,44"));
+    }
+
+    @Test
+    public void testNewLineSplit()
+    {
+    	assertEquals(7, StringCalc.add("1,3\n3"));
+    }
+
+    @Test(expected = RuntimeException.class)
+	public final void whenNegativeNumberIsUsedThenRuntimeExceptionIsThrown() 
+	{	
+    	StringCalc.add("2,-4,3,-5");
+	}
+	@Test
+	public final void whenNegativeNumbersAreUsedThenRuntimeExceptionIsThrown() 
+	{
+    	RuntimeException exception = null;
+    	try 
+    	{
+    	    StringCalc.add("2,-4,3,-5");
+    	} 
+    	catch (RuntimeException e) 
+    	{
+        	exception = e;
+    	}
+    	//assertNotNull(exception);
+    	assertEquals("Negatives not allowed: [-4, -5]", exception.getMessage());
+	}
 }
