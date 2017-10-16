@@ -23,4 +23,10 @@ public class StringCalcTest
 		assertEquals(3, StringCalc.add("1,2"));
 	}
 
+	@Test
+	public void testMultipleNumbers()
+	{
+		assertEquals(6, StringCalc.add("1,2,3"));
+	}
+
 }
