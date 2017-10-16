@@ -58,4 +58,21 @@ public class StringCalc
 		return total;
 	}
 
+	private static String[] splitNumbers(String numbers)
+	{
+		String delimiter = ",|\n";
+		if (numbers.startsWith("//"))
+		{
+			int delimiterIndex = numbers.indexOf("//") + 2;
+			delimiter = delimiter + "|" + numbers.substring(delimiterIndex, delimiterIndex + 1);
+			numbers = numbers.substring(delimiterIndex + 2);
+			return numbers.split(delimiter);
+		}
+		else 
+		{
+			return numbers.split(delimiter);	
+		}
+
+	}
+
 }

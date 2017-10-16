@@ -67,4 +67,9 @@ public class StringCalcTest
 	{
 		assertEquals(0 + 2, StringCalc.add("1001,2"));
 	}
+
+	@Test 
+    public void testDifferentDelimiters(){
+    	assertEquals(3, StringCalc.add("//;\n1;2"));
+    }
 }
